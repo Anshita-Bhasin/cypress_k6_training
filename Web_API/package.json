@@ -1,0 +1,57 @@
+{
+  "name": "cypress_training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "smoke-test": "npx cypress run --env tags='smoke'",
+    "negative-test": "npx cypress run --env tags='negative'",
+    "regression-test": "npx cypress run --env tags='negative'",
+    "test-critical": "npx cypress run -- env tags='critical'",
+    "test-auth": "npx cypress run --env tags='auth'",
+    "cy:run:sanity": "npx cypress run --env ENV=jenkins --e2e --spec=cypress/e2e/features/Sanity",
+    "test:regression": "npx cypress run -e TAGS='@regression1'",
+    "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
+    "test:smoke-critical:chrome-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser chrome",
+    "test:smoke-critical:firefox-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser firefox",
+    "test:regression:firefox-browser": "npx cypress run -e TAGS='@regression' --browser firefox",
+    "test-with-tags":"npx cypress run --env TAGS=$TAGS --record --key 287300e2-eeaa-4df3-91a1-11b843b4b25f --parallel",
+    "test-login": "npx cypress run",
+    "cypress-dashboard-test":"npx cypress run --record --key 287300e2-eeaa-4df3-91a1-11b843b4b25f --parallel",
+
+
+    "--------------": "------------Report Commands -----------------------",
+    "cucumber-report": "node cucumber-html-report.js",
+    "delete-reportFolder": "rm -rf ./reports",
+    "delete-existingJSON-report": "rm -rf ./cypress/cucumber-json",
+    "__________": " ------ Run Test with Report ___________",
+    "smoketest-withreport": "npm run delete-reportFolder;npm run test:smoke-critical; npm run cucumber-report;npm run delete-existingJSON-report",
+    "test-with-report": "npm run delete-reportFolder;npx cypress run; npm run cucumber-report",
+    "param-test-with-report": "npm run delete-reportFolder;npm run test-with-tags;npm run cucumber-report;npm run delete-existingJSON-report"
+
+
+
+
+  },
+  "author": "Anshita Bhasin", 
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.4.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/step-definition/*",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "multiple-cucumber-html-reporter": "^3.9.2"
+  }
+}

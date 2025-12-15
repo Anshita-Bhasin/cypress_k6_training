@@ -4,27 +4,6 @@
 
 Welcome to the **Cypress_k6** repository! This project is part of a live training series designed to help you build a solid foundation in JavaScript, advance to front-end test automation with **Cypress**, and explore performance testing with **k6**
 
-## 📁 Project Structure
-Here is the structure
-
-```
-/cypress_k6
-│── README.md
-│── package.json
-│── src
-│   └── example.js
-│── cypress
-│   └── integration
-│       └── test_spec.cy.js
-│── k6
-    └── load_test.js
-```
-
-- **src/**: Contains JavaScript files used in training.
-- **cypress/**: Houses test cases written with Cypress.
-- **k6/**: Contains scripts for load testing with k6.
-
----
 
 ## 🎯 Objectives:
 
@@ -96,5 +75,5 @@ If you have any questions or need further assistance, feel free to reach out!
 
 ## Git Workflow
 
-Happy Testing! 🚀
+Happy Testing! 
 

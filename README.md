@@ -15,7 +15,7 @@ Welcome to the **Cypress_k6** repository! This project is part of a live trainin
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/cypress_k6.git
+git clone https://github.com/Anshita-Bhasin/cypress_k6_training.git
 cd cypress_k6
 ```
 
